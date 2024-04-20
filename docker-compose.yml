@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13.9
+    container_name: pgp
+    restart: unless-stopped
+    ports:
+      - '5432:5432'
+    env_file: 
+      - ./env_files/dev.env
+#    volumes:
+#      - pgdata:/var/lib/postgresql/data
+
+#volumes:
+#  pgdata:
+#    name: pgdata
